@@ -29,14 +29,14 @@ function App() {
   const name = "KenCode"
   return (
     <div>
-      <h1>こんにちは, {name}!</h1>
+      <h1 className="text-[32px] font-semibold">こんにちは, {name}!</h1>
       <p>Reactの練習中です</p>
 
-      <h1>自己紹介</h1>
+      <h1 className="text-[24px] font-bold">自己紹介</h1>
       <ProfileCard name="KenCode" job="高校生エンジニア" />
       <ProfileCard name="テストくん" job="Webデザイナー" />
       <div>
-        <h1>{count}</h1>
+        <h1 className="text-[24px]">{count}</h1>
         <button onClick={() => setCount(count + 1)}>増やす</button>
       </div>
     </div>
