@@ -1,35 +1,21 @@
-import './App.css'
+import { Routes, Route, Link} from "react-router-dom"
+import HOME from "./pages/HOME"
+import ToDo from "./pages/ToDo"
 
-// function ProfileCard() {
-//   return (
-//     <div>
-//       <h2>About KenCode</h2>
-//       <p>高校生エンジニア</p>
-//     </div>
-//   )
-// }
-
-function ProfileCard(props) {
+export default function App() {
   return (
-    <div>
-      <h2>{props.name}</h2>
-      <p>{props.job}</p>
-    </div>
+    <>
+      {/* ナビゲーション */}
+      <nav>
+        <Link to="/">HOME</Link>
+        <Link to="/todo">ToDo</Link>
+      </nav>
+
+      {/* ルート定義 */}
+      <Routes>
+        <Route path="/" element={<HOME />} />
+        <Route path="/todo" element={<ToDo />} />
+      </Routes>
+    </>
   )
 }
-
-function App() {
-  const name = "KenCode"
-  return (
-    <div>
-      <h1>こんにちは, {name}!</h1>
-      <p>Reactの練習中です</p>
-
-      <h1>自己紹介</h1>
-      <ProfileCard name="KenCode" job="高校生エンジニア" />
-      <ProfileCard name="テストくん" job="Webデザイナー" />
-    </div>
-  )
-}
-
-export default App
